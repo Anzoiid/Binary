@@ -168,10 +168,19 @@
             padding-bottom: 60px;
         }
 
+        .mil-p-40-40 {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
         @media (max-width: 992px) {
             .mil-p-60-60 {
                 padding-top: 45px;
                 padding-bottom: 45px;
+            }
+            .mil-p-40-40 {
+                padding-top: 30px;
+                padding-bottom: 30px;
             }
         }
 
@@ -1164,6 +1173,12 @@
 </head>
 
 <body>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
 
     <!-- Wrapper -->
     <div class="mil-wrapper animate-on-scroll visible" id="top">
@@ -1184,7 +1199,7 @@
                                             The Legendary <span class="mil-accent">Risk</span><br>
                                             Management <span class="mil-accent">Tool</span>
                                         </h1>
-                                        <p class="text mil-center">Created in 2021 by <span class="mil-accent">Anzoiid</span> <br>where innovation meets precision trading</p>
+                                        <p class="text mil-center">Created in 2021 by <span class="mil-accent">Anzoiid</span> using <br>probability theory & risk-reward mathematics</p>
                                     </div>
                                 </div>
                             </div>

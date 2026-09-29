@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           X49 CLUB - THE LEGENDARY RISK MANAGEMENT TOOL
+           Standalone HTML with embedded CSS & JS
+           ========================================== */
+
+        /* --- Base Styles --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+            background-color: rgb(0, 0, 0);
+            -ms-scroll-chaining: none;
+            overscroll-behavior: none;
+        }
+
+        /* --- Layout --- */
+        .mil-wrapper {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            pointer-events: all;
+        }
+
+        .mil-relative {
+            position: relative;
+        }
+
+        .mil-o-hidden {
+            overflow: hidden;
+        }
+
+        .mil-flex {
+            display: flex;
+        }
+
+        .mil-vert-between {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Typography --- */
+        .mil-h1, .mil-h2, .mil-h3, .mil-h4, .mil-h5, .mil-h6 {
+            font-family: 'Outfit', sans-serif;
+            color: #fff;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .mil-h1 { font-size: 86px; }
+        .mil-h2 { font-size: 68px; }
+        .mil-h3 { font-size: 42px; }
+        .mil-h4 { font-size: 28px; }
+        .mil-h5 { font-size: 20px; line-height: 1.5; }
+        .mil-h6 { font-size: 16px; }
+
+        .mil-thin {
+            font-weight: 100;
+        }
+
+        .mil-bold {
+            font-weight: 700;
+        }
+
+        .mil-upper {
+            text-transform: uppercase;
+        }
+
+        .mil-center {
+            text-align: center;
+        }
+
+        .mil-left {
+            text-align: left;
+        }
+
+        .mil-right {
+            text-align: right;
+        }
+
+        .mil-text-sm {
+            font-size: 15px;
+        }
+
+        .mil-text-lg {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .mil-text-xl {
+            font-size: 21px;
+            line-height: 1.6;
+        }
+
+        .mil-muted {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .mil-accent {
+            color: rgb(255, 152, 0);
+        }
+
+        .mil-dark {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .mil-light-soft {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .mil-dark-soft {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* --- Spacing --- */
+        .mil-p-120-120 {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        @media (max-width: 992px) {
+            .mil-p-120-120 {
+                padding-top: 90px;
+                padding-bottom: 90px;
+            }
+        }
+
+        .mil-p-60-60 {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .mil-p-40-40 {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .mil-p-60-60 {
+                padding-top: 45px;
+                padding-bottom: 45px;
+            }
+            .mil-p-40-40 {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+        }
+
+        .mrb-10 { margin-bottom: 10px; }
+        .mrb-20 { margin-bottom: 20px; }
+        .mrb-30 { margin-bottom: 30px; }
+        .mrb-40 { margin-bottom: 40px; }
+        .mrb-50 { margin-bottom: 50px; }
+        .mrb-60 { margin-bottom: 60px; }
+
+        .mru-10 { margin-top: 10px; }
+        .mru-20 { margin-top: 20px; }
+        .mru-30 { margin-top: 30px; }
+        .mru-40 { margin-top: 40px; }
+        .mru-50 { margin-top: 50px; }
+        .mru-60 { margin-top: 60px; }
+
+        .mrr-10 { margin-right: 10px; }
+        .mrr-20 { margin-right: 20px; }
+        .mrr-30 { margin-right: 30px; }
+        .mrr-40 { margin-right: 40px; }
+        .mrr-50 { margin-right: 50px; }
+
+        /* --- Banner Section --- */
+        .mil-inner-banner {
+            position: relative;
+        }
+
+        .mil-inner-banner {
+            margin-bottom: 10vh; /* Space for parallax (max 30vh) + buffer to prevent overlap */
+        }
+
+        .mil-inner-banner .mil-banner-content {
+            padding: 150px 0 0 0;
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 1200px) {
+            .mil-inner-banner .mil-banner-content {
+                padding: 180px 0 60px 0;
+                min-height: auto;
+            }
+        }
+
+        .black-bg {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.9) 100%);
+            padding: 60px 40px 100px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+        }
+
+        .banner-cnt {
+            width: 100%;
+        }
+
+        .sub-title {
+            color: #a6a9b7;
+            font-size: 16px;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .text {
+            color: #a6a9b7;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Form Styles --- */
+        #tradingForm {
+            margin-top: 40px;
+        }
+
+        .input-cnt {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            flex: 0 0 auto;
+        }
+
+        .label {
+            display: block;
+            color: #a6a9b7;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .input-sm {
+            width: 245px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 152, 0, 0.6);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Outfit', sans-serif;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-sm:focus {
+            border-color: rgb(255, 152, 0);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+        }
+
+        .input-sm::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .box-btn-thin {
+            cursor: pointer;
+            border: none;
+            letter-spacing: 2px;
+            font-size: 12px;
+            background-color: rgba(255, 152, 0, 0.1);
+            color: rgb(255, 152, 0);
+            border-radius: 10px;
+            padding: 15px 30px;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.4s cubic-bezier(0, 0, 0.3642, 1);
+        }
+
+        .box-btn-thin:hover {
+            background-color: rgb(255, 152, 0);
+            color: rgb(0, 0, 0);
+            transform: scale(1.015);
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.4);
+        }
+
+        .box-btn-thin.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .box-btn-thin .btn-loader {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-top-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            margin-left: 10px;
+            animation: spin 0.8s linear infinite;
+            vertical-align: middle;
+        }
+
+        .box-btn-thin .btn-text {
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- Results Table --- */
+        #results {
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        thead {
+            background: rgba(255, 152, 0, 0.15);
+        }
+
+        th, td {
+            padding: 18px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            color: rgb(255, 152, 0);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 152, 0, 0.08);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Enhanced result table */
+        .result-table {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .result-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .result-table tbody tr:not(.total-row):hover {
+            transform: translateX(5px);
+            background: rgba(255, 152, 0, 0.12);
+            box-shadow: 0 3px 10px rgba(255, 152, 0, 0.1);
+        }
+
+        .result-table tbody tr.total-row {
+            background: rgba(255, 152, 0, 0.15);
+            border-top: 2px solid rgba(255, 152, 0, 0.3);
+        }
+
+        .result-table tbody tr.total-row:hover {
+            transform: translateX(0);
+        }
+
+        .result-table .gold {
+            background: rgba(255, 152, 0, 0.1);
+        }
+
+        .gold:hover {
+            background: rgba(255, 152, 0, 0.18) !important;
+        }
+
+        /* --- Course Section --- */
+        .course-cnt {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            align-items: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 152, 0, 0.15);
+        }
+
+        .course-cnt .left-box {
+            flex: 0 0 350px;
+            max-width: 350px;
+        }
+
+        .course-cnt .left-box img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+
+        .course-cnt .right-box {
+            max-width: 600px;
+        }
+
+        .tit-h3 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* --- Binary Trading Visualization --- */
+        .binary-visual {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            box-shadow: 0 0 30px rgba(255, 152, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .trading-chart {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+        }
+
+        .chart-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .chart-symbol {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .chart-timeframe {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .chart-price {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+        }
+
+        .current-price {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+        }
+
+        .price-change {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .price-change.positive {
+            color: #00e676;
+            background: rgba(0, 230, 118, 0.15);
+        }
+
+        .price-change.negative {
+            color: #ff5252;
+            background: rgba(255, 82, 82, 0.15);
+        }
+
+        .chart-graph {
+            flex: 1;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 120px;
+        }
+
+        .candlestick {
+            position: absolute;
+            bottom: 0;
+            width: 8px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .candlestick.up {
+            background: linear-gradient(to top, #00e676 0%, #00c853 100%);
+            box-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
+        }
+
+        .candlestick.down {
+            background: linear-gradient(to top, #ff5252 0%, #ff1744 100%);
+            box-shadow: 0 0 8px rgba(255, 82, 82, 0.5);
+        }
+
+        .candlestick.wick {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            background: inherit;
+            opacity: 0.6;
+        }
+
+        .chart-indicators {
+            display: flex;
+            gap: 10px;
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+        }
+
+        .indicator {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 8px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .indicator-label {
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+
+        .indicator-value {
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+
+        .indicator-value.positive {
+            color: #00e676;
+        }
+
+        .indicator-value.negative {
+            color: #ff5252;
+        }
+
+        /* Binary Stream */
+        .binary-stream {
+            height: 60px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            padding: 6px;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .binary-title {
+            color: rgba(255, 152, 0, 0.8);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .binary-digits {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        .binary-row {
+            display: flex;
+            gap: 3px;
+        }
+
+        .binary-digit {
+            display: inline-block;
+            padding: 2px 4px;
+            min-width: 16px;
+            text-align: center;
+            border-radius: 2px;
+            animation: binaryPulse 2s infinite;
+            text-shadow: 0 0 5px currentColor;
+        }
+
+        .binary-digit:nth-child(odd) {
+            color: #00e676;
+            background: rgba(0, 230, 118, 0.1);
+        }
+
+        .binary-digit:nth-child(even) {
+            color: #ff9800;
+            background: rgba(255, 152, 0, 0.1);
+            animation-delay: 0.5s;
+        }
+
+        @keyframes binaryPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes fadeBinary {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+
+        .left-box {
+            width: 350px;
+        }
+
+        .left-box img {
+            display: none;
+        }
+
+        .box-btn {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            letter-spacing: 2px;
+            font-size: 12px;
+            background-color: rgb(255, 152, 0);
+            color: rgb(0, 0, 0);
+            border-radius: 70px;
+            padding: 0 35px;
+            height: 70px;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.4s cubic-bezier(0, 0, 0.3642, 1);
+            margin-top: 20px;
+        }
+
+        .box-btn:hover {
+            transform: scale(1.015);
+            filter: brightness(110%);
+            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
+        }
+
+        .ghost {
+            display: none !important;
+        }
+
+        /* --- Responsive Design --- */
+        @media screen and (max-width: 992px) {
+            .tit-h1 { font-size: 72px; }
+            .tit-h2 { font-size: 56px; }
+            .tit-h3 { font-size: 36px; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .tit-h1 { font-size: 60px; }
+            .tit-h2 { font-size: 48px; }
+            .tit-h3 { font-size: 32px; }
+            .mil-inner-banner .mil-banner-content {
+                padding: 120px 0 40px 0;
+            }
+            .black-bg {
+                padding: 30px 20px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .tit-h1 { font-size: 48px; }
+            .tit-h2 { font-size: 42px; line-height: 1.3; }
+            .tit-h3 { font-size: 26px; }
+
+            .sub-title {
+                font-size: 14px;
+                margin-bottom: 40px;
+            }
+
+            .text {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .input-cnt {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .input-box {
+                width: 100%;
+            }
+
+            .input-sm {
+                width: 100%;
+            }
+
+            .course-cnt {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .course-cnt .left-box {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .course-cnt .right-box {
+                max-width: 100%;
+                width: 100%;
+                padding: 20px;
+            }
+
+            .tit-h3 br {
+                display: none;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 12px 10px;
+            }
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes resultPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(255, 152, 0, 0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(255, 152, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* Initial states for animated elements */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0, 0, 0.3642, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.fade-left {
+            transform: translateX(-30px);
+        }
+
+        .animate-on-scroll.fade-left.visible {
+            transform: translateX(0);
+        }
+
+        .animate-on-scroll.fade-right {
+            transform: translateX(30px);
+        }
+
+        .animate-on-scroll.fade-right.visible {
+            transform: translateX(0);
+        }
+
+        .animate-on-scroll.scale-in {
+            transform: scale(0.9);
+        }
+
+        .animate-on-scroll.scale-in.visible {
+            transform: scale(1);
+        }
+
+        /* Reactive element styles */
+        .reactive-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .reactive-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .reactive-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .reactive-input:focus {
+            animation: pulse 2s infinite;
+        }
+
+        /* Section backgrounds with subtle animation */
+        .section-animated {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-animated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 152, 0, 0.03) 0%,
+                transparent 30%,
+                transparent 70%,
+                rgba(255, 152, 0, 0.03) 100%
+            );
+            animation: shimmer 10s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0, 0, 0.3642, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 152, 0, 0.2);
+            border-color: rgba(255, 152, 0, 0.5);
+        }
+
+        /* Table row animation */
+        table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        table tbody tr:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.1);
+        }
+
+        /* Header animate */
+        .header {
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger children animations */
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Loader animation for calculations */
+        .loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 152, 0, 0.1);
+            animation: loadingPulse 0.8s infinite;
+            border-radius: inherit;
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.1; }
+        }
+
+        /* Enhanced binary visualization animations */
+        .binary-visual {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .trading-chart {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .chart-header {
+            animation: fadeInLeft 0.6s ease-out;
+        }
+
+        .chart-graph {
+            animation: fadeInRight 0.6s ease-out 0.2s both;
+        }
+
+        .chart-indicators {
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .binary-stream {
+            animation: fadeInScale 0.8s ease-out 0.6s both;
+        }
+
+        /* Input focus animations */
+        .input-sm {
+            transition: all 0.3s cubic-bezier(0, 0, 0.3642, 1);
+        }
+
+        .input-sm:focus {
+            animation: glow 2s infinite;
+            transform: translateY(-2px);
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Performance-optimized animations */
+        .animate-on-scroll,
+        .binary-digit,
+        .candlestick,
+        .box-btn-thin,
+        .box-btn {
+            will-change: transform, opacity;
+        }
+
+        /* Custom cursor styles */
+        .custom-cursor {
+            mix-blend-mode: difference;
+        }
+
+        /* Section animations */
+        .section-animated {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0, 0, 0.3642, 1);
+        }
+
+        .section-animated.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger container */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+        /* --- Scrollbar Styling (Webkit) --- */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 152, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 152, 0, 0.8);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="mil-wrapper animate-on-scroll visible" id="top">
+
+        <!-- Content -->
+        <div class="mil-content">
+            <div class="mil-main-transition">
+
+                <!-- Banner Section -->
+                <section class="mil-inner-banner section-animated">
+                    <div class="mil-banner-content mil-up stagger-children">
+                        <div class="container">
+                            <div class="black-bg card-hover">
+                                <div class="header">
+                                    <div class="banner-cnt animate-on-scroll fade-left">
+                                        <p class="sub-title">Happy to see you,</p>
+                                        <h1 class="mil-h2 mil-thin mil-center">
+                                            The Legendary <span class="mil-accent">Risk</span><br>
+                                            Management <span class="mil-accent">Tool</span>
+                                        </h1>
+                                        <p class="text mil-center">Created in 2021 by <span class="mil-accent">Anzoiid</span> using <br>probability theory & risk-reward mathematics</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Banner End -->risk-management-tool.html
+
+                <!-- Calculator Section -->
+                <section class="mil-p-120-120 section-animated">
+                    <div class="container stagger-children">
+                        <form id="tradingForm" class="animate-on-scroll fade-right">
+                            <div class="input-cnt">
+                                <div class="input-box mrr-20">
+                                    <label class="label" for="profitSplit">Profit Split (%):</label>
+                                    <input class="input-sm" type="number" id="profitSplit" name="profitSplit" value="90" min="1" max="100" required>
+                                </div>
+                                <div class="input-box">
+                                    <label class="label" for="numTrades">Number of Trades:</label>
+                                    <input class="input-sm" type="number" id="numTrades" name="numTrades" value="10" min="1" max="100" required>
+                                </div>
+                            </div>
+                            <div class="mil-center">
+                                <button class="box-btn-thin" type="button" onclick="calculateRisk()">Calculate Risk</button>
+                            </div>
+                        </form>
+
+                        <div id="results"></div>
+                    </div>
+                </section>
+                <!-- Calculator End -->
+
+                <!-- Course Promo Section -->
+                <section class="section-animated">
+                    <div class="container mil-p-60-60">
+                        <div class="course-cnt animate-on-scroll card-hover">
+                            <div class="left-box">
+                                <div class="binary-visual" id="binaryVisual">
+                                    <!-- Trading Chart -->
+                                    <div class="trading-chart">
+                                        <div class="chart-header">
+                                            <div class="chart-info">
+                                                <span class="chart-symbol">EUR/USD</span>
+                                                <span class="chart-timeframe">5MIN</span>
+                                            </div>
+                                            <div class="chart-price">
+                                                <span class="current-price" id="currentPrice">1.0847</span>
+                                                <span class="price-change positive" id="priceChange">+2.34%</span>
+                                            </div>
+                                        </div>
+                                        <div class="chart-graph" id="chartGraph"></div>
+                                        <div class="chart-indicators">
+                                            <div class="indicator">
+                                                <span class="indicator-label">RSI</span>
+                                                <span class="indicator-value" id="rsiValue">58.32</span>
+                                            </div>
+                                            <div class="indicator">
+                                                <span class="indicator-label">MACD</span>
+                                                <span class="indicator-value positive" id="macdValue">+0.023</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Binary Stream -->
+                                    <div class="binary-stream">
+                                        <div class="binary-title">LIVE DATA STREAM</div>
+                                        <div class="binary-digits" id="binaryDigits"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-box">
+                                <h3 class="tit-h3 mil-mb-20">THE ART OF <br>
+                                <span class="mil-thin">BINARY TRADING</span></h3>
+                                <p class="sub-title">X49 Club teaches you how to profit from binary options trading — simple, fast, and perfect for beginners. Learn the skills while keeping your day job.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Course Promo End -->
+
+            </div>
+        </div>
+        <!-- Content End -->
+
+    </div>
+    <!-- Wrapper End -->
+
+    <!-- JavaScript -->
+    <script>
+        // Risk Management Calculator
+        function calculateRisk() {
+            const btn = document.querySelector('button[onclick="calculateRisk()"]');
+            const resultsDiv = document.getElementById('results');
+
+            // Clear previous results immediately to prevent ghost scrollbars
+            resultsDiv.innerHTML = '';
+            resultsDiv.style.display = 'none';
+
+            // Show loading state
+            btn.classList.add('loading');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="btn-text">Calculating</span><span class="btn-loader"></span>';
+
+            // Simulate calculation delay for UX
+            setTimeout(() => {
+                // Get the profit split value from the input and convert it to a decimal
+                const profitSplitInput = document.getElementById('profitSplit').value;
+                const numTradesInput = document.getElementById('numTrades').value;
+
+                // Validate inputs
+                if (!profitSplitInput || profitSplitInput <= 0 || profitSplitInput > 100) {
+                    alert('Please enter a valid profit split percentage (1-100)');
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
+                    btn.innerHTML = 'Calculate Risk';
+                    resultsDiv.style.display = 'none';
+                    resultsDiv.innerHTML = '';
+                    return;
+                }
+
+                if (!numTradesInput || numTradesInput <= 0 || numTradesInput > 100) {
+                    alert('Please enter a valid number of trades (1-100)');
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
+                    btn.innerHTML = 'Calculate Risk';
+                    resultsDiv.style.display = 'none';
+                    resultsDiv.innerHTML = '';
+                    return;
+                }
+
+                const profitSplit = profitSplitInput / 100;
+                const numTrades = parseInt(numTradesInput, 10);
+                let results = `<table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>Trade</th>
+                            <th>Risk Amount ($)</th>
+                            <th>Net Profit ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                let previousAmount = 0;
+                let totalRisk = 0;
+
+                // Loop through each trade
+                for (let i = 1; i <= numTrades; i++) {
+                    // Calculate the net profit for the current trade
+                    const netProfit = i;
+                    // Calculate the risk amount for the current trade
+                    const riskAmount = (netProfit + previousAmount) / profitSplit;
+                    // Update the previous amount with the current risk amount
+                    previousAmount += riskAmount;
+                    totalRisk += riskAmount;
+
+                    // Color code rows based on risk level
+                    const rowClass = i === 1 ? 'class="gold"' : '';
+
+                    results += `<tr ${rowClass}>
+                        <td>${i}</td>
+                        <td>$${riskAmount.toFixed(2)}</td>
+                        <td>$${netProfit.toFixed(2)}</td>
+                    </tr>`;
+                }
+
+                // Add summary row
+                results += `
+                    <tr class="total-row">
+                        <td><strong>Total</strong></td>
+                        <td><strong>$${totalRisk.toFixed(2)}</strong></td>
+                        <td><strong>$${numTrades.toFixed(2)}</strong></td>
+                    </tr>
+                </tbody></table>`;
+
+                // Display the results - show container first
+                resultsDiv.style.display = 'block';
+                resultsDiv.innerHTML = results;
+
+                // Remove loading state
+                btn.classList.remove('loading');
+                btn.disabled = false;
+                btn.innerHTML = 'Calculate Risk';
+
+                // Animate rows with stagger effect
+                const rows = resultsDiv.querySelectorAll('tbody tr');
+                rows.forEach((row, index) => {
+                    row.style.opacity = '0';
+                    row.style.animation = `fadeInUp 0.5s ease-out ${index * 0.08}s forwards`;
+                    row.style.animationFillMode = 'forwards';
+                });
+
+                // Smooth scroll to results after a short delay to ensure content is rendered
+                setTimeout(() => {
+                    resultsDiv.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                }, 100);
+
+            }, 600); // 600ms delay for better UX
+        }
+
+        // Add some interactivity: Enter key support
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form interactivity
+            const inputs = document.querySelectorAll('#tradingForm input');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        calculateRisk();
+                    }
+                });
+            });
+
+            // Auto-focus first input
+            document.getElementById('profitSplit').focus();
+
+            // Initialize all animations
+            addDynamicStyles();          // Add runtime styles
+            initScrollAnimations();       // Scroll-triggered animations
+            initInteractiveFeedback();   // Interactive element feedback
+            initParallax();              // Parallax effect for banner
+            initCursorEffect();          // Custom cursor effect
+
+            // Initialize binary visualization
+            initBinaryVisualization();
+
+            // Start continuous animations
+            animateChart();
+            animateBinaryStream();
+            animateIndicators();
+
+            // Mark initial visible elements
+            setTimeout(() => {
+                document.querySelectorAll('.section-animated, .animate-on-scroll').forEach(el => {
+                    if (isElementInViewport(el)) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+
+        // Helper function to check if element is in viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+                rect.bottom >= 0
+            );
+        }
+
+        // ==========================================
+        // REACTIVE ANIMATIONS - SCROLL TRIGGERS
+        // ==========================================
+
+        // Intersection Observer for scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+
+                        // Add stagger animation to children if parent has stagger class
+                        if (entry.target.classList.contains('stagger-animation')) {
+                            const children = entry.target.children;
+                            Array.from(children).forEach((child, index) => {
+                                setTimeout(() => {
+                                    child.style.opacity = '1';
+                                    child.style.transform = 'translateY(0)';
+                                }, index * 100);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll(
+                '.animate-on-scroll, .stagger-animation, .section-animated'
+            );
+            animatedElements.forEach(el => observer.observe(el));
+        }
+
+        // ==========================================
+        // INTERACTIVE ELEMENT FEEDBACK
+        // ==========================================
+
+        function initInteractiveFeedback() {
+            // Add ripple effect to buttons
+            const buttons = document.querySelectorAll('.box-btn, .box-btn-thin, .x49btn');
+            buttons.forEach(btn => {
+                btn.classList.add('reactive-btn');
+                btn.addEventListener('click', function(e) {
+                    // Create ripple
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.4);
+                        transform: scale(0);
+                        animation: ripple-animation 0.6s ease-out;
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${y}px;
+                        left: ${x}px;
+                        pointer-events: none;
+                    `;
+
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Add loading state to calculate button
+            const calcBtn = document.querySelector('button[onclick="calculateRisk()"]');
+            if (calcBtn) {
+                calcBtn.addEventListener('click', function() {
+                    this.classList.add('loading');
+                    this.textContent = 'Calculating...';
+
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                        this.textContent = 'Calculate Risk';
+                    }, 800);
+                });
+            }
+
+            // Animate inputs on focus
+            const inputs = document.querySelectorAll('.input-sm');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateY(-3px)';
+                    this.parentElement.style.transition = 'transform 0.3s ease';
+                });
+
+                input.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add hover effects to course card
+            const courseCnt = document.querySelector('.course-cnt');
+            if (courseCnt) {
+                courseCnt.classList.add('card-hover');
+            }
+        }
+
+        // Add CSS for ripple animation
+        function addDynamicStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple-animation {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // ==========================================
+        // PARALLAX EFFECT FOR BANNER
+        // ==========================================
+
+        function initParallax() {
+            const banner = document.querySelector('.mil-inner-banner');
+            if (!banner) return;
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+
+                if (scrolled < window.innerHeight) {
+                    banner.style.transform = `translateY(${rate}px)`;
+                }
+            }, { passive: true });
+        }
+
+        // ==========================================
+        // CURSOR TRAIL EFFECT (Optional)
+        // ==========================================
+
+        function initCursorEffect() {
+            // Only on devices with hover capability
+            if (!window.matchMedia('(hover: hover)').matches) return;
+
+            const cursor = document.createElement('div');
+            cursor.className = 'custom-cursor';
+            cursor.style.cssText = `
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                border: 2px solid rgba(255, 152, 0, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: all 0.1s ease;
+                transform: translate(-50%, -50%);
+                display: none;
+            `;
+            document.body.appendChild(cursor);
+
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.display = 'block';
+
+                // Enlarge cursor over interactive elements
+                const target = e.target;
+                if (target.tagName === 'BUTTON' || target.tagName === 'INPUT' ||
+                    target.classList.contains('reactive-btn') ||
+                    target.closest('.box-btn') ||
+                    target.closest('.input-sm')) {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+                    cursor.style.borderColor = 'rgba(255, 152, 0, 0.8)';
+                    cursor.style.background = 'rgba(255, 152, 0, 0.1)';
+                } else {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursor.style.borderColor = 'rgba(255, 152, 0, 0.5)';
+                    cursor.style.background = 'transparent';
+                }
+            });
+
+            // Smooth cursor following
+            function animateCursor() {
+                const dx = mouseX - cursorX;
+                const dy = mouseY - cursorY;
+
+                cursorX += dx * 0.15;
+                cursorY += dy * 0.15;
+
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            // Hide cursor when leaving window
+            document.addEventListener('mouseleave', () => {
+                cursor.style.display = 'none';
+            });
+        }
+
+        // ==========================================
+        // BINARY TRADING VISUALIZATION FUNCTIONS
+        // ==========================================
+        function initBinaryVisualization() {
+            const chartGraph = document.getElementById('chartGraph');
+            const binaryDigits = document.getElementById('binaryDigits');
+
+            // Create initial candlesticks
+            if (chartGraph) {
+                for (let i = 0; i < 20; i++) {
+                    createCandlestick(chartGraph, i);
+                }
+            }
+
+            // Create binary digit rows
+            if (binaryDigits) {
+                for (let row = 0; row < 3; row++) {
+                    const binaryRow = document.createElement('div');
+                    binaryRow.className = 'binary-row';
+                    for (let col = 0; col < 8; col++) {
+                        const digit = document.createElement('span');
+                        digit.className = 'binary-digit';
+                        digit.textContent = Math.random() > 0.5 ? '1' : '0';
+                        digit.style.animationDelay = `${(col * 0.1 + row * 0.2)}s`;
+                        binaryRow.appendChild(digit);
+                    }
+                    binaryDigits.appendChild(binaryRow);
+                }
+            }
+        }
+
+        function createCandlestick(container, index) {
+            const height = 30 + Math.random() * 60;
+            const isUp = Math.random() > 0.5;
+            const left = index * 12;
+
+            const candle = document.createElement('div');
+            candle.className = `candlestick ${isUp ? 'up' : 'down'}`;
+            candle.style.left = `${left}px`;
+            candle.style.height = `${height}px`;
+            candle.style.bottom = '10px';
+
+            // Add wick
+            const wick = document.createElement('div');
+            wick.className = 'candlestick wick';
+            wick.style.height = `${height * (0.3 + Math.random() * 0.5)}px`;
+            wick.style.bottom = `${height + 10}px`;
+
+            container.appendChild(candle);
+            container.appendChild(wick);
+
+            return { candle, wick };
+        }
+
+        function animateChart() {
+            const chartGraph = document.getElementById('chartGraph');
+            const currentPrice = document.getElementById('currentPrice');
+            const priceChange = document.getElementById('priceChange');
+
+            if (!chartGraph || !currentPrice || !priceChange) return;
+
+            let basePrice = 45231.50;
+            let prevPrice = basePrice;
+
+            setInterval(() => {
+                // Random price movement
+                const change = (Math.random() - 0.5) * 150;
+                basePrice += change;
+                basePrice = Math.max(44000, Math.min(46000, basePrice));
+
+                // Update price display
+                currentPrice.textContent = basePrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+                // Update price change
+                const changePercent = ((basePrice - 45231.50) / 45231.50 * 100).toFixed(2);
+                const isPositive = changePercent >= 0;
+                priceChange.textContent = `${isPositive ? '+' : ''}${changePercent}%`;
+                priceChange.className = `price-change ${isPositive ? 'positive' : 'negative'}`;
+
+                // Animate candlesticks
+                const candles = chartGraph.querySelectorAll('.candlestick, .candlestick.wick');
+                candles.forEach(candle => {
+                    const newHeight = 20 + Math.random() * 70;
+                    const newBottom = 5 + Math.random() * 15;
+
+                    if (candle.classList.contains('wick')) {
+                        candle.style.height = `${newHeight * (0.4 + Math.random() * 0.4)}px`;
+                        candle.style.bottom = `${newHeight + newBottom}px`;
+                    } else {
+                        candle.style.height = `${newHeight}px`;
+                        candle.style.bottom = `${newBottom}px`;
+
+                        // Randomly change from up to down
+                        if (Math.random() > 0.8) {
+                            candle.classList.toggle('up');
+                            candle.classList.toggle('down');
+                        }
+                    }
+                });
+
+                // Shift candlesticks left
+                const allCandles = Array.from(chartGraph.children);
+                if (allCandles.length > 0) {
+                    const firstCandle = allCandles[0];
+                    if (firstCandle.offsetLeft < -20) {
+                        firstCandle.remove();
+                        const lastCandle = allCandles[allCandles.length - 1];
+                        const newIndex = allCandles.length - 1;
+                        createCandlestick(chartGraph, newIndex);
+                    }
+                }
+            }, 1000);
+        }
+
+        function animateBinaryStream() {
+            const binaryDigits = document.getElementById('binaryDigits');
+            if (!binaryDigits) return;
+
+            setInterval(() => {
+                const rows = binaryDigits.querySelectorAll('.binary-row');
+                rows.forEach(row => {
+                    const digits = row.querySelectorAll('.binary-digit');
+                    digits.forEach(digit => {
+                        // Randomly flip binary digits
+                        if (Math.random() > 0.7) {
+                            digit.textContent = Math.random() > 0.5 ? '1' : '0';
+                            digit.style.opacity = '1';
+                            setTimeout(() => {
+                                digit.style.opacity = '0.6';
+                            }, 200);
+                        }
+                    });
+                });
+            }, 300);
+        }
+
+        function animateIndicators() {
+            const rsiValue = document.getElementById('rsiValue');
+            const macdValue = document.getElementById('macdValue');
+
+            if (!rsiValue || !macdValue) return;
+
+            setInterval(() => {
+                // Animate RSI between 30-70
+                const rsi = 30 + Math.random() * 40;
+                rsiValue.textContent = rsi.toFixed(2);
+
+                // Animate MACD
+                const macd = (Math.random() * 0.06) - 0.03;
+                macdValue.textContent = `${macd >= 0 ? '+' : ''}${macd.toFixed(3)}`;
+                macdValue.className = `indicator-value ${macd >= 0 ? 'positive' : 'negative'}`;
+            }, 2000);
+        }
+    </script>
+
+</body>
+
+</html>
