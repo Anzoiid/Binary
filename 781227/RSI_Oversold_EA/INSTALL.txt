@@ -1,0 +1,29 @@
+RSI Oversold EA — install
+==========================
+
+Required layout (MetaTrader 5 data folder)
+------------------------------------------
+
+  MQL5\Experts\
+    RSIP.mq5                    ← compile THIS file (F7)
+    RSI_Oversold_EA\
+      Modules\
+        Common.mqh
+        RSI_Engine.mqh
+        ... (all other .mqh)
+
+Do NOT place RSIP.mq5 inside RSI_Oversold_EA\ unless you change the #include paths.
+The includes are:  #include "RSI_Oversold_EA/Modules/....mqh"
+so the .mq5 must sit next to the RSI_Oversold_EA folder (both under Experts\).
+
+Steps
+-----
+
+1. Copy "RSIP.mq5" and the folder "RSI_Oversold_EA" (with Modules inside) into:
+   Terminal\MQL5\Experts\
+
+2. Open MetaEditor → open Experts\RSIP.mq5 → Compile (F7).
+
+3. Attach the EA to a chart (XAUUSD / XAGUSD). RSI_Timeframe default is M5.
+
+4. CSV logs: MQL5\Files\ + LogPath (default RSI_OS_Trades.csv).
